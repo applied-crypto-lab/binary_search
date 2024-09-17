@@ -1,0 +1,21 @@
+*****************************************************************************************************************************
+Directory Structure: 
+
+	./connection: Network setup and data transmission (Modified from PICCO), including prg as member function of network classs. 
+
+	./RSS_NN: Rss vector computations, matrix multiplication, prg_aes(will be removed later)
+
+	./RSS_NN/Program.cpp: simple test and correctness check for rss_open, rss_mult, rss_multpub, rss_matmult
+
+
+Compile: Similar to PICCO
+
+Execution: Similar to PICCO 
+	
+	./Rss_nn_test %PartyID %Runtime-config %privatekey %datasize %ring_size 
+
+	e.g. 	%PartyID: 1~3  
+		%datasize: any integer under 30 (didn't check datasize larger than 2^30) 
+		%ring_size: any integer under 126. For ring size bigger than 62, element type should be __uint128_t. For smaller ring size 62, using long long as element type will get a better performance. This is achieved by manually modify ./setringsize.h (may not be a good idea, will be updated later).
+
+*************************************************Updated on Feb 13 2020 CY**************************************************
